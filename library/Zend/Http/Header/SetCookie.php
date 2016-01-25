@@ -107,7 +107,7 @@ class SetCookie implements MultipleHeaderInterface
                 $keyValuePairs = preg_split('#;\s*#', $headerLine);
 
                 foreach ($keyValuePairs as $keyValue) {
-                    if (preg_match('#^(?<headerKey>[^=]+)=\s*("?)(?<headerValue>[^"]+)\2#',$keyValue,$matches)) {
+                    if (preg_match('#^(?<headerKey>[^=]+)=\s*("?)(?<headerValue>[^"]*)\2#',$keyValue,$matches)) {
                         $headerKey  = $matches['headerKey'];
                         $headerValue= $matches['headerValue'];
                     } else {
